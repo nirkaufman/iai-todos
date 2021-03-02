@@ -7,11 +7,14 @@ import List from './List';
 function App() {
   const [list, setList] = useState([]);
   const [reload, setReload] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {    
+    setLoading(true);
     fetch('https://jsonplaceholder.typicode.com/todos')
       .then(results => results.json())
       .then(items => setList(items))
+      .finally(() => setLoading(false))
   }, [reload])
 
   useEffect(() => {
@@ -31,16 +34,20 @@ function App() {
     setList([...list]);
   }
 
+  function isLoading() {
+    if(loading) {
+      return <h2>Loading...</h2>;
+    } else {
+      return <List items={list} onRemoveItem={removeItem} />
+    }
+  }
+
   return (
     <section className="todoapp">
       <button onClick={refresh}>Reload</button>
       <Header title="TodoApp" onAddItem={addItem} />
 
-     // if loading show "loading"
-     // if ready show the List
-
-      <List items={list}
-        onRemoveItem={removeItem} />
+      { isLoading() }
 
       <Footer count={list.length} />
     </section>
