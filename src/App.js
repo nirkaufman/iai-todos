@@ -1,4 +1,4 @@
-import './app.css';
+import './App.css';
 import { createElement, useState } from 'react';
 import Header from './Header';
 import Footer from './Footer';
