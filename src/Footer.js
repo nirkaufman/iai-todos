@@ -1,11 +1,10 @@
-
-function Footer () {
+function Footer ({count}) {
   return (
     <footer className="footer">
-    <span className="todo-count"><strong>0</strong> items left</span>
-    <button className="clear-completed">Clear completed
-    </button>
-  </footer>
+      <span className="todo-count"><strong>{count}</strong> left</span>
+      <button className="clear-completed">Clear completed
+      </button>
+    </footer>
   )
 }
 
