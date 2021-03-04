@@ -1,4 +1,4 @@
-function List ({items, onRemoveItem}) {
+function List ({items}) {
   return (
     <section className="main">
       <input className="toggle-all"
@@ -11,8 +11,7 @@ function List ({items, onRemoveItem}) {
             <input className="toggle"
                   type="checkbox" />
             <label>{item.title}</label>
-            <button onClick={() => onRemoveItem(index)} 
-                    className="destroy"></button>
+            <button className="destroy"></button>
           </div>
           <input className="edit" />
         </li>
