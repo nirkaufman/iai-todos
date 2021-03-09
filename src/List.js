@@ -1,12 +1,28 @@
-function List ({items}) {
+import {useState, useEffect, useContext} from 'react';
+import ListContext from './providers/list-provider'
+
+function List () {
+  const {items} = useContext(ListContext);
+
+  // const [todos, setTodos] = useState([]);
+  
+  // useEffect(() => {
+  //   fetch('https://jsonplaceholder.typicode.com/todos')
+  //     .then( (response) => response.json() )
+  //     .then( (results => setTodos(results)))
+  // }, []);
+
   return (
     <section className="main">
+
+    
+
       <input className="toggle-all"
              type="checkbox" />
       <ul id="list" className="todo-list">        
 
-      { items.map( (item, index) => (
-        <li>
+      { items.map( (item) => (
+        <li key={item.id}>
           <div className="view">
             <input className="toggle"
                   type="checkbox" />

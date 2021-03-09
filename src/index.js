@@ -2,10 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import ListContext from './providers/list-provider'
+
+const items = [{id: 1, title: 'first'}];
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ListContext.Provider value={{items}}>
+      <App />
+    </ListContext.Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

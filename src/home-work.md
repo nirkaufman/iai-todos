@@ -5,7 +5,7 @@
 1. create a hook function `useCollection`.
 2. The function should be used as follows:
 
-```javascript
+```javascript 
   function App () {
     const {items, addItem, removeItem, reloadItems, isLoading} = useCollection('https://link-to-todos')
   } 
