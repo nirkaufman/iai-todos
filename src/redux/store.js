@@ -9,4 +9,6 @@ const rootReducer = combineReducers({
   ui: uiReducer
 })
 
-const todoListStore = createStore(rootReducer);
+export const todoListStore = createStore(rootReducer,  
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  );

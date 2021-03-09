@@ -4,10 +4,14 @@ import App from './ui/App';
 import reportWebVitals from './reportWebVitals';
 import './redux/store';
 import './index.css';
+import {Provider} from 'react-redux';
+import {todoListStore} from './redux/store'
 
 ReactDOM.render(
   <React.StrictMode>
-      <App />  
+    <Provider store={todoListStore}>
+      <App /> 
+    </Provider> 
   </React.StrictMode>,
   document.getElementById('root')
 );

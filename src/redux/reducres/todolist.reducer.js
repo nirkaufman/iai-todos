@@ -7,7 +7,7 @@ export function todolistReducer(currentItems = [], action) {
   }
 
   if(action.type === 'ADD_ITEM') {
-    return [...currentItems, action.payload];
+    return [...currentItems, {title: action.payload}];
   }
 
   return currentItems;
