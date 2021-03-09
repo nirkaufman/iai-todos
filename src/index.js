@@ -2,15 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import ListContext from './providers/list-provider'
-
-const items = [{id: 1, title: 'first'}];
+import './redux/store' 
 
 ReactDOM.render(
   <React.StrictMode>
-    <ListContext.Provider value={{items}}>
-      <App />
-    </ListContext.Provider>
+      <App />  
   </React.StrictMode>,
   document.getElementById('root')
 );
